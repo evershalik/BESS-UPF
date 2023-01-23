@@ -3,6 +3,7 @@
 wget https://raw.githubusercontent.com/evershalik/VM_Initial-Setup/main/startup.sh
 bash startup.sh
 git clone https://github.com/omec-project/upf.git
+sudo apt install make
 cd upf
 make docker-build
 
