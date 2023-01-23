@@ -4,8 +4,8 @@ wget https://raw.githubusercontent.com/evershalik/VM_Initial-Setup/main/startup.
 bash startup.sh
 git clone https://github.com/omec-project/upf.git
 sudo apt install make
-cd upf
-make docker-build
+cd upf/
+#make docker-build
 
 sudo sysctl -w vm.nr_hugepages=102400
 tee -a /etc/sysctl.conf << EOF
@@ -25,6 +25,7 @@ sed -i 's/#mode="sim"/mode="sim"/'  /home/ubuntu/upf/scripts/docker_setup.sh
 
 cd /home/ubuntu/upf/
 ./scripts/docker_setup.sh
+wait
 docker exec bess-pfcpiface pfcpiface -config conf/upf.json -simulate create
 docker exec bess ./bessctl run up4
 docker exec bess ./bessctl show pipeline > pipeline.txt
