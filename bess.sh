@@ -23,7 +23,7 @@ sed -i 's/"mode": "dpdk"/"mode": "sim"/' /home/ubuntu/upf/conf/upf.json
 sed -i 's/mode="dpdk"/#mode="dpdk"/' /home/ubuntu/upf/scripts/docker_setup.sh 
 sed -i 's/#mode="sim"/mode="sim"/'  /home/ubuntu/upf/scripts/docker_setup.sh 
 
-cd upf/
+cd /home/ubuntu/upf/
 ./scripts/docker_setup.sh
 docker exec bess-pfcpiface pfcpiface -config conf/upf.json -simulate create
 docker exec bess ./bessctl run up4
