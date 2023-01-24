@@ -28,7 +28,7 @@ cd upf/
 #make docker-build
 
 sudo sysctl -w vm.nr_hugepages=102400
-tee -a /etc/sysctl.conf << EOF
+sudo tee -a /etc/sysctl.conf << EOF
 vm.nr_hugepages = 102400
 EOF
 
