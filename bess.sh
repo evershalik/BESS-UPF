@@ -32,7 +32,7 @@ sudo tee -a /etc/sysctl.conf << EOF
 vm.nr_hugepages = 102400
 EOF
 
-tee -a /etc/default/grub << EOF
+sudo tee -a /etc/default/grub << EOF
 GRUB_CMDLINE_LINUX="intel_iommu=on iommu=pt default_hugepagesz=1G hugepagesz=1G hugepages=2 transparent_hugepage=never"
 EOF
 sudo update-grub
